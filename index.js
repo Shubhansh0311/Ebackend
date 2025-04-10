@@ -31,7 +31,7 @@ app.use(express.json());
 app.post("/check",(req,res)=>{
     // console.log(req);
 
-    res.json({message:"root working "})
+    res.status(200).json({message:"root working "});
 })
 
 // authentication
