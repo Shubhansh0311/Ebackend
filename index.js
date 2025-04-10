@@ -25,11 +25,11 @@ const app = express();
 // app.options('*', cors(corsOptions)); // Handle preflight requests
 // app.use(cors(corsOptions));
 dotenv.config();
-app.use(cors())
 app.use(express.json());
+app.use(cors())
 
 app.get("/check",(req,res)=>{
-    console.log(req);
+    // console.log(req);
 
     res.json({message:"root working "})
 })
