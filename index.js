@@ -15,18 +15,18 @@ import adminProductRouters from "./routes/adminProduct.routes.js";
 
 const app = express();
 
-// const corsOptions = {
-//     origin: '*', // Your React app URL
-//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS
-//     allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
-//     credentials: true, // Include cookies in requests if needed
-// };
+const corsOptions = {
+    origin: 'https://ecommerce-eta-sandy.vercel.app', // Your React app URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+    credentials: true, // Include cookies in requests if needed
+};
 
-// app.options('*', cors(corsOptions)); // Handle preflight requests
-// app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // Handle preflight requests
+app.use(cors(corsOptions));
 dotenv.config();
 app.use(express.json());
-app.use(cors())
+// app.use(cors())
 
 app.get("/check",(req,res)=>{
     // console.log(req);
