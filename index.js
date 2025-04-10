@@ -11,7 +11,7 @@ import ratingRouters from "./routes/rating.routes.js";
 import orderRouters from "./routes/order.routes.js";
 import adminOrderRouters from "./routes/adminOrder.routes.js";
 import adminProductRouters from "./routes/adminProduct.routes.js";
-
+import serverless from `serverless-http`;
 
 const app = express();
 
@@ -64,4 +64,4 @@ app.use("/api/rating", ratingRouters.ratingRouter);
 // orders
 app.use("/api/orders", orderRouters.orderRouter);
 
-export default app;
+export default serverless(app);
